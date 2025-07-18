@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdGuard Pro - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <img src="icons/icon48.png" alt="AdGuard Pro" class="logo-icon">
+        <div class="logo-text">
+          <h1>AdGuard Pro</h1>
+          <p>Advanced Ad Blocking Settings</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="exportSettings" class="button secondary">Export Settings</button>
+        <button id="importSettings" class="button secondary">Import Settings</button>
+        <button id="saveSettings" class="button primary">Save Settings</button>
+      </div>
+    </header>
+
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="general">General</button>
+      <button class="nav-tab" data-tab="filters">Filters</button>
+      <button class="nav-tab" data-tab="whitelist">Whitelist</button>
+      <button class="nav-tab" data-tab="advanced">Advanced</button>
+      <button class="nav-tab" data-tab="stats">Statistics</button>
+    </nav>
+
+    <main class="main-content">
+      <!-- General Tab -->
+      <div class="tab-content active" id="general">
+        <section class="settings-section">
+          <h2>General Settings</h2>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="enableBlocking" checked>
+              <span class="checkmark"></span>
+              Enable Ad Blocking
+            </label>
+            <p class="setting-description">Turn on/off ad blocking globally</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="blockPopups" checked>
+              <span class="checkmark"></span>
+              Block Pop-ups
+            </label>
+            <p class="setting-description">Block annoying pop-up windows and overlays</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="blockSocialWidgets" checked>
+              <span class="checkmark"></span>
+              Block Social Media Widgets
+            </label>
+            <p class="setting-description">Block social media share buttons and widgets</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="blockTracking" checked>
+              <span class="checkmark"></span>
+              Block Tracking Scripts
+            </label>
+            <p class="setting-description">Block analytics and tracking scripts</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="blockCookieNotices">
+              <span class="checkmark"></span>
+              Block Cookie Notices
+            </label>
+            <p class="setting-description">Hide cookie consent banners and notices</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="enableStealth">
+              <span class="checkmark"></span>
+              Stealth Mode
+            </label>
+            <p class="setting-description">Hide your browsing activity from websites</p>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <h2>Performance</h2>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              Filtering Delay (ms)
+              <input type="range" id="filteringDelay" min="0" max="1000" value="100" class="slider">
+              <span class="range-value">100</span>
+            </label>
+            <p class="setting-description">Delay before applying filters to reduce CPU usage</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="enableCache" checked>
+              <span class="checkmark"></span>
+              Enable Filter Cache
+            </label>
+            <p class="setting-description">Cache filter results for better performance</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Filters Tab -->
+      <div class="tab-content" id="filters">
+        <section class="settings-section">
+          <h2>Filter Lists</h2>
+          
+          <div class="filter-lists">
+            <div class="filter-list-item">
+              <div class="filter-info">
+                <h3>EasyList</h3>
+                <p>Primary filter list for blocking ads</p>
+                <span class="filter-stats">45,231 rules • Updated 2 hours ago</span>
+              </div>
+              <div class="filter-actions">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="easylist" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-list-item">
+              <div class="filter-info">
+                <h3>EasyPrivacy</h3>
+                <p>Blocks tracking and analytics</p>
+                <span class="filter-stats">12,847 rules • Updated 1 hour ago</span>
+              </div>
+              <div class="filter-actions">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="easyprivacy" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-list-item">
+              <div class="filter-info">
+                <h3>Fanboy's Annoyances</h3>
+                <p>Blocks social media widgets and annoyances</p>
+                <span class="filter-stats">8,394 rules • Updated 3 hours ago</span>
+              </div>
+              <div class="filter-actions">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="fanboy">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-list-item">
+              <div class="filter-info">
+                <h3>uBlock Origin Filters</h3>
+                <p>Additional comprehensive filters</p>
+                <span class="filter-stats">2,156 rules • Updated 4 hours ago</span>
+              </div>
+              <div class="filter-actions">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="ublock" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="custom-filters">
+            <h3>Custom Filter Rules</h3>
+            <textarea id="customRules" placeholder="Enter custom filter rules, one per line...
+Example:
+||doubleclick.net^
+##.advertisement
+@@||example.com^$document"></textarea>
+            <div class="custom-filters-actions">
+              <button id="validateRules" class="button secondary">Validate Rules</button>
+              <button id="clearRules" class="button secondary">Clear All</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Whitelist Tab -->
+      <div class="tab-content" id="whitelist">
+        <section class="settings-section">
+          <h2>Whitelisted Domains</h2>
+          
+          <div class="whitelist-add">
+            <input type="text" id="whitelistDomain" placeholder="Enter domain (e.g., example.com)">
+            <button id="addWhitelist" class="button primary">Add Domain</button>
+          </div>
+
+          <div class="whitelist-list" id="whitelistList">
+            <!-- Whitelist items will be populated by JavaScript -->
+          </div>
+
+          <div class="whitelist-actions">
+            <button id="exportWhitelist" class="button secondary">Export Whitelist</button>
+            <button id="importWhitelist" class="button secondary">Import Whitelist</button>
+            <button id="clearWhitelist" class="button danger">Clear All</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Advanced Tab -->
+      <div class="tab-content" id="advanced">
+        <section class="settings-section">
+          <h2>Advanced Settings</h2>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="enableLogging">
+              <span class="checkmark"></span>
+              Enable Debug Logging
+            </label>
+            <p class="setting-description">Log blocking activities for debugging</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="blockWebRTC">
+              <span class="checkmark"></span>
+              Block WebRTC
+            </label>
+            <p class="setting-description">Prevent WebRTC IP leaks</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="enableCSPInjection">
+              <span class="checkmark"></span>
+              Enable CSP Injection
+            </label>
+            <p class="setting-description">Inject Content Security Policy headers</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              User Agent Override
+              <input type="text" id="userAgentOverride" placeholder="Leave empty for default">
+            </label>
+            <p class="setting-description">Override browser user agent string</p>
+          </div>
+
+          <div class="setting-item">
+            <label class="setting-label">
+              DNS Servers
+              <input type="text" id="dnsServers" value="1.1.1.1, 8.8.8.8" placeholder="Comma-separated DNS servers">
+            </label>
+            <p class="setting-description">Custom DNS servers for domain resolution</p>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <h2>Developer Tools</h2>
+          
+          <div class="dev-tools">
+            <button id="clearStorage" class="button danger">Clear Extension Data</button>
+            <button id="exportLogs" class="button secondary">Export Logs</button>
+            <button id="resetToDefaults" class="button danger">Reset to Defaults</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Statistics Tab -->
+      <div class="tab-content" id="stats">
+        <section class="settings-section">
+          <h2>Blocking Statistics</h2>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number" id="totalBlocked">0</div>
+              <div class="stat-label">Total Blocked</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="todayBlocked">0</div>
+              <div class="stat-label">Today</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="weekBlocked">0</div>
+              <div class="stat-label">This Week</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="monthBlocked">0</div>
+              <div class="stat-label">This Month</div>
+            </div>
+          </div>
+
+          <div class="stats-chart">
+            <h3>Blocking Activity (Last 7 Days)</h3>
+            <canvas id="blockingChart" width="600" height="300"></canvas>
+          </div>
+
+          <div class="top-blocked">
+            <h3>Top Blocked Domains</h3>
+            <div class="blocked-list" id="topBlockedList">
+              <!-- Top blocked domains will be populated by JavaScript -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>&copy; 2024 AdGuard Pro. All rights reserved.</p>
+          <p>Version 1.0.0</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <input type="file" id="importFile" accept=".json" style="display: none;">
+  
+  <script src="options.js"></script>
+</body>
+</html>

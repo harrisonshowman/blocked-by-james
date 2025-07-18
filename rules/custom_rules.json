@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1001,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "regexFilter": ".*\\/ads\\.js.*",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 1002,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "regexFilter": ".*\\/advertisement\\.js.*",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 1003,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "regexFilter": ".*\\/banner\\d+\\.(jpg|png|gif).*",
+      "resourceTypes": ["image"]
+    }
+  },
+  {
+    "id": 1004,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "regexFilter": ".*\\/iframe-ad.*",
+      "resourceTypes": ["sub_frame"]
+    }
+  },
+  {
+    "id": 1005,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "regexFilter": ".*\\/analytics\\/.*",
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  },
+  {
+    "id": 1006,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "*/ads.js*",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 1007,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "*/advertisement.js*",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 1008,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "*/tracking.js*",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 1009,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "*/popup.js*",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 1010,
+    "priority": 3,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "*ad-banner*",
+      "resourceTypes": ["image", "sub_frame"]
+    }
+  }
+]

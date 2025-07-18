@@ -1,0 +1,404 @@
+/* Content script styles for AdGuard Pro */
+
+/* Hide blocked elements */
+[data-adguard-blocked="true"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Common ad blocking selectors */
+.ad,
+.ads,
+.advertisement,
+.advert,
+.ad-banner,
+.ad-container,
+.ad-wrapper,
+.ad-section,
+.ad-block,
+.ad-zone,
+.ad-space,
+.ad-slot,
+.sponsored,
+.promoted,
+.promotion,
+.promo,
+.banner-ad,
+.text-ad,
+.display-ad,
+.video-ad,
+.popup-ad,
+.overlay-ad,
+.interstitial-ad,
+.native-ad,
+.affiliate,
+.affiliate-link,
+.outbrain,
+.taboola,
+.content-ads,
+.sidebar-ad,
+.header-ad,
+.footer-ad,
+.inline-ad,
+.floating-ad,
+.sticky-ad {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Google AdSense */
+.adsbygoogle,
+ins.adsbygoogle,
+.google-ad,
+.googlesyndication,
+.googleadservices {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Social media widgets and buttons */
+.social-share,
+.social-buttons,
+.share-buttons,
+.facebook-like,
+.twitter-share,
+.linkedin-share,
+.pinterest-share,
+.social-widget,
+.social-plugin,
+.fb-like,
+.fb-share,
+.twitter-tweet,
+.instagram-media {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Newsletter and email signup popups */
+.newsletter-popup,
+.email-signup,
+.email-capture,
+.signup-modal,
+.subscribe-popup,
+.newsletter-modal,
+.email-modal,
+.mailing-list {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Cookie notices and GDPR banners */
+.cookie-notice,
+.cookie-banner,
+.cookie-consent,
+.cookie-bar,
+.gdpr-notice,
+.gdpr-banner,
+.privacy-notice,
+.consent-banner,
+.cookie-policy {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Popup and overlay elements */
+.popup,
+.overlay,
+.modal-overlay,
+.lightbox-overlay,
+.backdrop,
+.popup-overlay,
+.modal-backdrop,
+.overlay-bg {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Tracking pixels and beacons */
+img[width="1"],
+img[height="1"],
+img[src*="tracking"],
+img[src*="analytics"],
+img[src*="pixel"],
+img[src*="beacon"],
+iframe[width="1"],
+iframe[height="1"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Common ad network selectors */
+iframe[src*="doubleclick"],
+iframe[src*="googlesyndication"],
+iframe[src*="googleadservices"],
+iframe[src*="amazon-adsystem"],
+iframe[src*="facebook.com/tr"],
+iframe[src*="outbrain"],
+iframe[src*="taboola"],
+iframe[src*="adsystem"],
+iframe[src*="advertising"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* YouTube ads */
+.video-ads,
+.ytp-ad-module,
+.ytp-ad-overlay-container,
+.ytp-ad-text-overlay,
+.ytp-ad-player-overlay,
+.masthead-ad,
+.pyv-afc-ads-container {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Facebook sponsored posts */
+div[data-ft*="ei"],
+div[data-testid="fbfeed_story"]:has(span:contains("Sponsored")),
+article:has(span:contains("Sponsored")) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Twitter promoted tweets */
+div[data-testid="tweet"]:has(span:contains("Promoted")),
+article:has(span:contains("Promoted")) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* LinkedIn sponsored content */
+.feed-shared-update-v2:has(span:contains("Promoted")),
+.ember-view:has(span:contains("Promoted")) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Instagram sponsored posts */
+article:has(span:contains("Sponsored")),
+div:has(span:contains("Sponsored")) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Reddit promoted posts */
+div[data-promoted="true"],
+.promotedlink,
+.promoted {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Amazon ads */
+.s-sponsored-info-icon,
+div[data-component-type="sp-sponsored-result"],
+.AdHolder,
+.a-carousel-card:has(.s-sponsored-info-icon) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* eBay promoted listings */
+.promotedListing,
+.promoted-listing,
+.s-item__wrapper:has(.PROMOTED) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Mobile-specific ads */
+@media screen and (max-width: 768px) {
+  .mobile-ad,
+  .mobile-banner,
+  .mobile-popup,
+  .app-download-banner,
+  .app-install-banner,
+  .mobile-interstitial {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Video player ads */
+.video-ad-container,
+.video-ad-overlay,
+.preroll-ad,
+.midroll-ad,
+.postroll-ad,
+.video-advertisement,
+.player-ad,
+.jwplayer-ad,
+.vjs-ad {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Chat and support widgets */
+.chat-widget,
+.support-widget,
+.help-widget,
+.live-chat,
+.customer-support,
+.chat-bubble,
+.messenger-widget {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Age verification and location popups */
+.age-verification,
+.location-popup,
+.geo-popup,
+.country-selector,
+.region-popup {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Exit intent popups */
+.exit-intent,
+.exit-popup,
+.exit-modal,
+.before-unload-popup {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Survey and feedback popups */
+.survey-popup,
+.feedback-popup,
+.rating-popup,
+.review-popup,
+.survey-modal,
+.feedback-modal {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Anti-adblock messages */
+.adblock-notice,
+.adblock-warning,
+.adblock-message,
+.anti-adblock,
+.please-disable-adblock,
+.whitelist-request {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Notification permission requests */
+.notification-request,
+.push-notification-popup,
+.browser-notification,
+.permission-request {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* App download prompts */
+.app-download,
+.mobile-app-banner,
+.download-app,
+.get-app,
+.install-app,
+.app-promo {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Content recommendation widgets */
+.recommended-content,
+.related-articles,
+.you-may-like,
+.more-stories,
+.trending-now,
+.popular-posts {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Email subscription bars */
+.email-bar,
+.subscription-bar,
+.newsletter-bar,
+.signup-bar,
+.email-capture-bar {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Floating elements */
+.floating-banner,
+.sticky-banner,
+.fixed-banner,
+.floating-ad,
+.sticky-ad,
+.fixed-ad {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Autoplay video controls */
+video[autoplay],
+video[data-autoplay="true"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Specific site overrides */
+/* Can be extended with site-specific rules */
+
+/* AdGuard Pro specific classes */
+.adguard-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.adguard-blocked {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Performance optimization - reduce reflows */
+.adguard-processing {
+  pointer-events: none;
+  user-select: none;
+}
