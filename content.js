@@ -200,6 +200,9 @@
       
       // Notify background script
       this.sendMessage({ action: 'elementBlocked' });
+
+      // Show LeBron James GIF overlay
+      this.showLebronBlockGif();
     }
 
     restoreBlockedElements() {
@@ -288,6 +291,32 @@
           resolve(response || {});
         });
       });
+    }
+
+    // Show LeBron James GIF overlay when an ad is blocked
+    showLebronBlockGif() {
+      let overlay = document.getElementById('lebron-block-gif-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'lebron-block-gif-overlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = '20px';
+        overlay.style.bottom = '';
+        overlay.style.right = '20px';
+        overlay.style.zIndex = '999999';
+        overlay.style.pointerEvents = 'none';
+        overlay.style.transition = 'opacity 0.3s';
+        overlay.style.opacity = '0';
+        overlay.innerHTML = `<img src="${chrome.runtime.getURL('blocked-by-james.gif')}" style="width:480px; height:auto; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.3);" />`;
+        document.body.appendChild(overlay);
+      }
+      // Show the overlay
+      overlay.style.opacity = '1';
+      // Hide after 5 seconds
+      clearTimeout(overlay._hideTimeout);
+      overlay._hideTimeout = setTimeout(() => {
+        overlay.style.opacity = '0';
+      }, 5000);
     }
   }
 
